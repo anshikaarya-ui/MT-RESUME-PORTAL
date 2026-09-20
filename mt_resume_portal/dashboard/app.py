@@ -475,7 +475,16 @@ section[data-testid="stSidebar"] textarea {
 hr {
     border-color: #29324a !important;
 }
-        </style>
+        /* Fix disabled buttons in dark mode */
+.stButton > button:disabled {
+    background: #6366f1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    border: none !important;
+}
+
+</style>
         """,
         unsafe_allow_html=True,
     )
