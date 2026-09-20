@@ -254,7 +254,227 @@ def inject_css() -> None:
             font-size: 0.85rem;
             padding: 30px 0 10px;
         }
+/* ===== FORCE DARK MODE ===== */
 
+.stApp {
+    background: #0b1020 !important;
+    color: #f8fafc !important;
+}
+
+/* Main content */
+.block-container {
+    background: transparent !important;
+}
+
+/* All normal text */
+.stApp p,
+.stApp span,
+.stApp label,
+.stApp div {
+    color: #f8fafc;
+}
+
+/* Headings */
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4,
+.stApp h5,
+.stApp h6 {
+    color: #ffffff !important;
+}
+
+/* ===== TEXT INPUTS ===== */
+
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input {
+    background-color: #151b2e !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #374151 !important;
+    border-radius: 12px !important;
+    caret-color: #ffffff !important;
+}
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder,
+.stNumberInput input::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+}
+
+/* Text while typing */
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+.stNumberInput input:focus {
+    background-color: #1b2338 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #7c6cff !important;
+    box-shadow: 0 0 0 1px #7c6cff !important;
+}
+
+/* ===== SELECT BOX / DROPDOWNS ===== */
+
+.stSelectbox [data-baseweb="select"] > div,
+.stMultiSelect [data-baseweb="select"] > div {
+    background-color: #151b2e !important;
+    color: #ffffff !important;
+    border-color: #374151 !important;
+}
+
+.stSelectbox [data-baseweb="select"] *,
+.stMultiSelect [data-baseweb="select"] * {
+    color: #ffffff !important;
+}
+
+/* Dropdown menu */
+div[data-baseweb="popover"],
+div[data-baseweb="menu"] {
+    background-color: #151b2e !important;
+}
+
+div[data-baseweb="menu"] li {
+    background-color: #151b2e !important;
+    color: #ffffff !important;
+}
+
+div[data-baseweb="menu"] li:hover {
+    background-color: #252d46 !important;
+}
+
+/* ===== FILE UPLOADER ===== */
+
+section[data-testid="stFileUploader"] {
+    background: #11182b !important;
+    border: 2px dashed #5865d8 !important;
+    border-radius: 16px !important;
+}
+
+section[data-testid="stFileUploader"] * {
+    color: #ffffff !important;
+}
+
+/* ===== BUTTONS ===== */
+
+.stButton > button {
+    background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.stButton > button p,
+.stButton > button span {
+    color: #ffffff !important;
+}
+
+/* ===== METRIC CARDS ===== */
+
+div[data-testid="stMetric"] {
+    background: #151b2e !important;
+    border: 1px solid #29324a !important;
+}
+
+div[data-testid="stMetric"] label {
+    color: #94a3b8 !important;
+}
+
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+    color: #ffffff !important;
+}
+
+/* ===== DATAFRAMES / TABLES ===== */
+
+div[data-testid="stDataFrame"] {
+    background: #111827 !important;
+    border: 1px solid #29324a !important;
+}
+
+/* ===== TABS ===== */
+
+button[data-baseweb="tab"] {
+    color: #94a3b8 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #a78bfa !important;
+}
+
+/* ===== EXPANDERS ===== */
+
+div[data-testid="stExpander"] {
+    background: #11182b !important;
+    border: 1px solid #29324a !important;
+    border-radius: 14px !important;
+}
+
+div[data-testid="stExpander"] * {
+    color: #f8fafc !important;
+}
+
+/* ===== CHECKBOXES ===== */
+
+.stCheckbox label,
+.stCheckbox label span {
+    color: #ffffff !important;
+}
+
+/* ===== RADIO BUTTONS ===== */
+
+.stRadio label,
+.stRadio label span {
+    color: #ffffff !important;
+}
+
+/* ===== SLIDERS ===== */
+
+.stSlider label {
+    color: #ffffff !important;
+}
+
+/* ===== ALERTS ===== */
+
+div[data-testid="stAlert"] {
+    background: #151b2e !important;
+    color: #ffffff !important;
+}
+
+/* ===== CODE / JSON ===== */
+
+.stCodeBlock,
+code {
+    background: #080d18 !important;
+    color: #e2e8f0 !important;
+}
+
+/* ===== SIDEBAR ===== */
+
+section[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #080c18 0%,
+        #111633 100%
+    ) !important;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+}
+
+/* Sidebar inputs */
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] textarea {
+    background: #151b2e !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ===== DIVIDERS ===== */
+
+hr {
+    border-color: #29324a !important;
+}
         </style>
         """,
         unsafe_allow_html=True,
