@@ -778,85 +778,41 @@ def dashboard_page() -> None:
 def welcome_page() -> None:
     st.markdown(
         """
-        <style>
-        .welcome-wrap {
-            text-align: center;
-            padding: 70px 20px 30px 20px;
-        }
+        <div style="
+            text-align:center;
+            padding:60px 20px 35px 20px;
+        ">
+            <div style="
+                display:inline-block;
+                padding:8px 16px;
+                border-radius:999px;
+                background:#1e1b4b;
+                border:1px solid #4f46e5;
+                color:#a5b4fc;
+                font-size:13px;
+                font-weight:700;
+                letter-spacing:1.5px;
+                margin-bottom:20px;
+            ">
+                ✦ AI RECRUITMENT PLATFORM
+            </div>
 
-        .welcome-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 999px;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(129, 140, 248, 0.35);
-            color: #a5b4fc !important;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 22px;
-        }
-
-        .welcome-title {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.05;
-            margin: 0;
-            color: #ffffff !important;
-        }
-
-        .welcome-subtitle {
-            font-size: 20px;
-            color: #cbd5e1 !important;
-            margin-top: 18px;
-            margin-bottom: 45px;
-        }
-
-        .feature-card {
-            background: #151b2e;
-            border: 1px solid #29324a;
-            border-radius: 18px;
-            padding: 25px 18px;
-            min-height: 145px;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .feature-title {
-            color: #ffffff !important;
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .feature-text {
-            color: #94a3b8 !important;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .welcome-note {
-            text-align: center;
-            color: #64748b !important;
-            font-size: 12px;
-            margin-top: 28px;
-        }
-        </style>
-
-        <div class="welcome-wrap">
-            <div class="welcome-badge">✦ AI RECRUITMENT PLATFORM</div>
-
-            <div class="welcome-title">
+            <h1 style="
+                color:#ffffff;
+                font-size:52px;
+                font-weight:800;
+                margin:0;
+            ">
                 MT Talent Intelligence
-            </div>
+            </h1>
 
-            <div class="welcome-subtitle">
+            <p style="
+                color:#cbd5e1;
+                font-size:20px;
+                margin-top:16px;
+            ">
                 AI-powered recruitment & candidate–job matching
-            </div>
+            </p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -867,12 +823,19 @@ def welcome_page() -> None:
     with col1:
         st.markdown(
             """
-            <div class="feature-card">
-                <div class="feature-icon">✦</div>
-                <div class="feature-title">AI-Powered Screening</div>
-                <div class="feature-text">
+            <div style="
+                background:#151b2e;
+                border:1px solid #29324a;
+                border-radius:18px;
+                padding:25px;
+                text-align:center;
+                min-height:140px;
+            ">
+                <div style="font-size:30px;">✦</div>
+                <h3 style="color:#ffffff;">AI-Powered Screening</h3>
+                <p style="color:#94a3b8;">
                     Extract structured information from resumes and job descriptions.
-                </div>
+                </p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -881,12 +844,19 @@ def welcome_page() -> None:
     with col2:
         st.markdown(
             """
-            <div class="feature-card">
-                <div class="feature-icon">◎</div>
-                <div class="feature-title">Intelligent Matching</div>
-                <div class="feature-text">
+            <div style="
+                background:#151b2e;
+                border:1px solid #29324a;
+                border-radius:18px;
+                padding:25px;
+                text-align:center;
+                min-height:140px;
+            ">
+                <div style="font-size:30px;">◎</div>
+                <h3 style="color:#ffffff;">Intelligent Matching</h3>
+                <p style="color:#94a3b8;">
                     Compare candidate profiles with role requirements using automated scoring.
-                </div>
+                </p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -895,12 +865,19 @@ def welcome_page() -> None:
     with col3:
         st.markdown(
             """
-            <div class="feature-card">
-                <div class="feature-icon">▦</div>
-                <div class="feature-title">Recruiter Dashboard</div>
-                <div class="feature-text">
+            <div style="
+                background:#151b2e;
+                border:1px solid #29324a;
+                border-radius:18px;
+                padding:25px;
+                text-align:center;
+                min-height:140px;
+            ">
+                <div style="font-size:30px;">▦</div>
+                <h3 style="color:#ffffff;">Recruiter Dashboard</h3>
+                <p style="color:#94a3b8;">
                     Review rankings, candidate insights, reports, and recruitment metrics.
-                </div>
+                </p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -917,13 +894,17 @@ def welcome_page() -> None:
 
     st.markdown(
         """
-        <div class="welcome-note">
+        <p style="
+            text-align:center;
+            color:#64748b;
+            font-size:12px;
+            margin-top:25px;
+        ">
             Human-in-the-loop recruitment system · For demonstration purposes
-        </div>
+        </p>
         """,
         unsafe_allow_html=True,
     )
-
 
 def main() -> None:
     inject_css()
