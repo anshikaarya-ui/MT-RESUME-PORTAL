@@ -368,7 +368,22 @@ section[data-testid="stFileUploader"] * {
 .stButton > button span {
     color: #ffffff !important;
 }
+/* ===== FORM SUBMIT BUTTON ===== */
+.stFormSubmitButton > button {
+    background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 6px 18px rgba(109,93,252,0.22) !important;
+}
 
+.stFormSubmitButton > button p,
+.stFormSubmitButton > button span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
 /* ===== METRIC CARDS ===== */
 
 div[data-testid="stMetric"] {
