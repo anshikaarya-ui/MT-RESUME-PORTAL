@@ -927,7 +927,7 @@ def welcome_page() -> None:
 
 def main() -> None:
     inject_css()
-        if "entered_workspace" not in st.session_state:
+    if "entered_workspace" not in st.session_state:
         st.session_state.entered_workspace = False
 
     if not st.session_state.entered_workspace:
