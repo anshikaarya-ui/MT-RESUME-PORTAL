@@ -123,20 +123,20 @@ def inject_css() -> None:
 
         /* ===== BUTTONS ===== */
         .stButton > button {
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            color: white;
-            font-weight: 700;
-            padding: 0.65rem 1.2rem;
-            box-shadow: 0 6px 18px rgba(109,93,252,0.22);
-            transition: all 0.2s ease;
-        }
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    padding: 0.65rem 1.2rem !important;
+}
 
-        .stButton > button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(109,93,252,0.30);
-        }
+.stButton > button:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
 
         /* ===== INPUTS ===== */
         .stTextInput input,
