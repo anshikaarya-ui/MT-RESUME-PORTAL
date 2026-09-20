@@ -773,139 +773,57 @@ def dashboard_page() -> None:
         st.markdown("**Suggested interview questions**")
         st.write(row.get("interview_questions", ""))
 
-
-
 def welcome_page() -> None:
-    st.markdown(
-        """
-        <div style="
-            text-align:center;
-            padding:60px 20px 35px 20px;
-        ">
-            <div style="
-                display:inline-block;
-                padding:8px 16px;
-                border-radius:999px;
-                background:#1e1b4b;
-                border:1px solid #4f46e5;
-                color:#a5b4fc;
-                font-size:13px;
-                font-weight:700;
-                letter-spacing:1.5px;
-                margin-bottom:20px;
-            ">
-                ✦ AI RECRUITMENT PLATFORM
-            </div>
+    st.markdown("## ✦ AI RECRUITMENT PLATFORM")
 
-            <h1 style="
-                color:#ffffff;
-                font-size:52px;
-                font-weight:800;
-                margin:0;
-            ">
-                MT Talent Intelligence
-            </h1>
+    st.title("MT Talent Intelligence")
 
-            <p style="
-                color:#cbd5e1;
-                font-size:20px;
-                margin-top:16px;
-            ">
-                AI-powered recruitment & candidate–job matching
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    st.subheader(
+        "AI-powered recruitment & candidate–job matching"
     )
+
+    st.write("")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown(
-            """
-            <div style="
-                background:#151b2e;
-                border:1px solid #29324a;
-                border-radius:18px;
-                padding:25px;
-                text-align:center;
-                min-height:140px;
-            ">
-                <div style="font-size:30px;">✦</div>
-                <h3 style="color:#ffffff;">AI-Powered Screening</h3>
-                <p style="color:#94a3b8;">
-                    Extract structured information from resumes and job descriptions.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.markdown("### ✦ AI-Powered Screening")
+        st.write(
+            "Extract structured information from resumes "
+            "and job descriptions."
         )
 
     with col2:
-        st.markdown(
-            """
-            <div style="
-                background:#151b2e;
-                border:1px solid #29324a;
-                border-radius:18px;
-                padding:25px;
-                text-align:center;
-                min-height:140px;
-            ">
-                <div style="font-size:30px;">◎</div>
-                <h3 style="color:#ffffff;">Intelligent Matching</h3>
-                <p style="color:#94a3b8;">
-                    Compare candidate profiles with role requirements using automated scoring.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.markdown("### ◎ Intelligent Matching")
+        st.write(
+            "Compare candidate profiles with role requirements "
+            "using automated scoring."
         )
 
     with col3:
-        st.markdown(
-            """
-            <div style="
-                background:#151b2e;
-                border:1px solid #29324a;
-                border-radius:18px;
-                padding:25px;
-                text-align:center;
-                min-height:140px;
-            ">
-                <div style="font-size:30px;">▦</div>
-                <h3 style="color:#ffffff;">Recruiter Dashboard</h3>
-                <p style="color:#94a3b8;">
-                    Review rankings, candidate insights, reports, and recruitment metrics.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.markdown("### ▦ Recruiter Dashboard")
+        st.write(
+            "Review rankings, candidate insights, reports, "
+            "and recruitment metrics."
         )
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.write("")
+    st.write("")
 
     _, button_col, _ = st.columns([1, 2, 1])
 
     with button_col:
-        if st.button("Enter Demo Workspace →", use_container_width=True):
+        if st.button(
+            "Enter Demo Workspace →",
+            use_container_width=True
+        ):
             st.session_state.entered_workspace = True
             st.rerun()
 
-    st.markdown(
-        """
-        <p style="
-            text-align:center;
-            color:#64748b;
-            font-size:12px;
-            margin-top:25px;
-        ">
-            Human-in-the-loop recruitment system · For demonstration purposes
-        </p>
-        """,
-        unsafe_allow_html=True,
+    st.caption(
+        "Human-in-the-loop recruitment system · "
+        "For demonstration purposes"
     )
-
 def main() -> None:
     inject_css()
     if "entered_workspace" not in st.session_state:
