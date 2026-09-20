@@ -26,111 +26,239 @@ def inject_css() -> None:
     st.markdown(
         """
         <style>
+
+        /* ===== MAIN THEME ===== */
         :root {
-          --apple-bg: #f5f5f7;
-          --apple-card: rgba(255,255,255,.82);
-          --apple-text: #1d1d1f;
-          --apple-muted: #6e6e73;
-          --apple-blue: #0071e3;
-          --apple-line: rgba(210,210,215,.9);
-          --apple-green: #34c759;
-          --apple-orange: #ff9500;
-          --apple-red: #ff3b30;
+            --bg: #f5f7ff;
+            --card: #ffffff;
+            --navy: #111827;
+            --purple: #6d5dfc;
+            --blue: #3b82f6;
+            --cyan: #06b6d4;
+            --pink: #ec4899;
+            --green: #10b981;
+            --orange: #f59e0b;
+            --muted: #64748b;
+            --border: #e5e7eb;
         }
-        html, body, [class*="css"] {
-          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif !important;
-          color: var(--apple-text);
-        }
+
+        /* ===== PAGE ===== */
         .stApp {
-          background:
-            radial-gradient(circle at top left, rgba(0,113,227,.10), transparent 30%),
-            radial-gradient(circle at 70% 10%, rgba(52,199,89,.09), transparent 22%),
-            var(--apple-bg);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(109,93,252,0.12), transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(6,182,212,0.10), transparent 28%),
+                var(--bg);
+            color: var(--navy);
         }
+
+        .block-container {
+            max-width: 1400px;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        /* ===== SIDEBAR ===== */
         section[data-testid="stSidebar"] {
-          background: rgba(255,255,255,.70);
-          backdrop-filter: blur(24px);
-          border-right: 1px solid var(--apple-line);
+            background: linear-gradient(180deg, #111827 0%, #1e1b4b 100%);
+            border-right: none;
         }
+
+        section[data-testid="stSidebar"] * {
+            color: white !important;
+        }
+
+        section[data-testid="stSidebar"] .stButton button {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+        }
+
+        section[data-testid="stSidebar"] .stButton button:hover {
+            background: rgba(255,255,255,0.16);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== HEADINGS ===== */
+        h1 {
+            font-size: 2.5rem !important;
+            font-weight: 800 !important;
+            letter-spacing: -1px;
+            color: #111827 !important;
+        }
+
+        h2 {
+            font-weight: 750 !important;
+            color: #111827 !important;
+        }
+
+        h3 {
+            font-weight: 700 !important;
+            color: #1f2937 !important;
+        }
+
+        /* ===== METRIC CARDS ===== */
+        div[data-testid="stMetric"] {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+            transition: all 0.2s ease;
+        }
+
+        div[data-testid="stMetric"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(109,93,252,0.14);
+        }
+
+        div[data-testid="stMetricLabel"] {
+            color: var(--muted) !important;
+            font-weight: 600;
+        }
+
+        div[data-testid="stMetricValue"] {
+            color: #111827 !important;
+            font-weight: 800;
+        }
+
+        /* ===== BUTTONS ===== */
+        .stButton > button {
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            color: white;
+            font-weight: 700;
+            padding: 0.65rem 1.2rem;
+            box-shadow: 0 6px 18px rgba(109,93,252,0.22);
+            transition: all 0.2s ease;
+        }
+
+        .stButton > button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(109,93,252,0.30);
+        }
+
+        /* ===== INPUTS ===== */
+        .stTextInput input,
+        .stTextArea textarea,
+        .stSelectbox div[data-baseweb="select"],
+        .stNumberInput input {
+            border-radius: 12px !important;
+            border: 1px solid #dbe1ea !important;
+            background: white !important;
+        }
+
+        /* ===== UPLOAD BOX ===== */
+        section[data-testid="stFileUploader"] {
+            background: linear-gradient(
+                135deg,
+                rgba(109,93,252,0.06),
+                rgba(59,130,246,0.06)
+            );
+            border: 2px dashed rgba(109,93,252,0.35);
+            border-radius: 18px;
+            padding: 12px;
+        }
+
+        /* ===== ALERTS ===== */
+        div[data-testid="stAlert"] {
+            border-radius: 14px;
+            border: none;
+        }
+
+        /* ===== DATAFRAME ===== */
+        div[data-testid="stDataFrame"] {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 20px rgba(15,23,42,0.05);
+        }
+
+        /* ===== TABS ===== */
+        button[data-baseweb="tab"] {
+            font-weight: 700;
+        }
+
+        button[data-baseweb="tab"][aria-selected="true"] {
+            color: var(--purple) !important;
+        }
+
+        /* ===== CUSTOM HERO ===== */
         .hero {
-          padding: 36px 34px;
-          border: 1px solid var(--apple-line);
-          border-radius: 34px;
-          background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(237,244,255,.88));
-          box-shadow: 0 26px 70px rgba(0,0,0,.07);
-          margin-bottom: 22px;
+            background: linear-gradient(
+                135deg,
+                #111827 0%,
+                #312e81 55%,
+                #4f46e5 100%
+            );
+            border-radius: 24px;
+            padding: 32px 36px;
+            margin-bottom: 26px;
+            color: white;
+            box-shadow: 0 18px 45px rgba(49,46,129,0.25);
         }
+
         .hero h1 {
-          font-size: 52px;
-          line-height: 1.02;
-          letter-spacing: -.055em;
-          margin: 0 0 8px;
-          font-weight: 800;
+            color: white !important;
+            margin-bottom: 8px;
         }
+
         .hero p {
-          color: var(--apple-muted);
-          font-size: 18px;
-          max-width: 920px;
-          margin: 0;
+            color: rgba(255,255,255,0.78);
+            font-size: 1.05rem;
+            margin-bottom: 0;
         }
-        .glass-card {
-          padding: 24px;
-          border-radius: 28px;
-          border: 1px solid var(--apple-line);
-          background: var(--apple-card);
-          backdrop-filter: blur(20px);
-          box-shadow: 0 18px 42px rgba(0,0,0,.055);
-          height: 100%;
+
+        /* ===== SECTION CARD ===== */
+        .section-card {
+            background: rgba(255,255,255,0.92);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            margin: 14px 0;
+            box-shadow: 0 8px 28px rgba(15,23,42,0.05);
         }
-        .metric-card {
-          padding: 22px 22px 18px;
-          border-radius: 26px;
-          background: rgba(255,255,255,.86);
-          border: 1px solid var(--apple-line);
-          box-shadow: 0 12px 30px rgba(0,0,0,.045);
+
+        /* ===== SCORE BADGES ===== */
+        .score-high {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(16,185,129,0.12);
+            color: #047857;
+            font-weight: 800;
         }
-        .metric-label { color: var(--apple-muted); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
-        .metric-value { font-size: 38px; font-weight: 800; letter-spacing: -.05em; margin-top: 4px; }
-        .small-muted { color: var(--apple-muted); font-size: 14px; }
-        .pill {
-          display: inline-block;
-          padding: 7px 12px;
-          border-radius: 999px;
-          background: rgba(0,113,227,.10);
-          color: var(--apple-blue);
-          font-weight: 700;
-          font-size: 13px;
-          margin-right: 6px;
-          margin-bottom: 6px;
+
+        .score-medium {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(245,158,11,0.14);
+            color: #b45309;
+            font-weight: 800;
         }
-        div[data-testid="stButton"] button, div[data-testid="stDownloadButton"] button {
-          border-radius: 999px !important;
-          border: 0 !important;
-          background: #111111 !important;
-          color: #ffffff !important;
-          padding: 0.7rem 1.15rem !important;
-          font-weight: 700 !important;
-          box-shadow: 0 10px 24px rgba(0,0,0,.12);
+
+        .score-low {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(239,68,68,0.12);
+            color: #b91c1c;
+            font-weight: 800;
         }
-        div[data-testid="stFileUploader"] section {
-          border-radius: 24px !important;
-          border: 1px dashed rgba(0,113,227,.45) !important;
-          background: rgba(255,255,255,.62) !important;
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            padding: 30px 0 10px;
         }
-        .review-note {
-          border-left: 4px solid var(--apple-blue);
-          padding: 12px 14px;
-          background: rgba(0,113,227,.07);
-          border-radius: 14px;
-          color: #1d1d1f;
-          margin: 12px 0 18px;
-        }
+
         </style>
         """,
         unsafe_allow_html=True,
     )
-
-
 def api_get(path: str, **params: Any) -> Any:
     response = requests.get(f"{API_BASE}{path}", params=params, timeout=60)
     response.raise_for_status()
