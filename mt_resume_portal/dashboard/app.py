@@ -774,8 +774,166 @@ def dashboard_page() -> None:
         st.write(row.get("interview_questions", ""))
 
 
+
+def welcome_page() -> None:
+    st.markdown(
+        """
+        <style>
+        .welcome-wrap {
+            text-align: center;
+            padding: 70px 20px 30px 20px;
+        }
+
+        .welcome-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(129, 140, 248, 0.35);
+            color: #a5b4fc !important;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .welcome-title {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.05;
+            margin: 0;
+            color: #ffffff !important;
+        }
+
+        .welcome-subtitle {
+            font-size: 20px;
+            color: #cbd5e1 !important;
+            margin-top: 18px;
+            margin-bottom: 45px;
+        }
+
+        .feature-card {
+            background: #151b2e;
+            border: 1px solid #29324a;
+            border-radius: 18px;
+            padding: 25px 18px;
+            min-height: 145px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            color: #ffffff !important;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            color: #94a3b8 !important;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .welcome-note {
+            text-align: center;
+            color: #64748b !important;
+            font-size: 12px;
+            margin-top: 28px;
+        }
+        </style>
+
+        <div class="welcome-wrap">
+            <div class="welcome-badge">✦ AI RECRUITMENT PLATFORM</div>
+
+            <div class="welcome-title">
+                MT Talent Intelligence
+            </div>
+
+            <div class="welcome-subtitle">
+                AI-powered recruitment & candidate–job matching
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown(
+            """
+            <div class="feature-card">
+                <div class="feature-icon">✦</div>
+                <div class="feature-title">AI-Powered Screening</div>
+                <div class="feature-text">
+                    Extract structured information from resumes and job descriptions.
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col2:
+        st.markdown(
+            """
+            <div class="feature-card">
+                <div class="feature-icon">◎</div>
+                <div class="feature-title">Intelligent Matching</div>
+                <div class="feature-text">
+                    Compare candidate profiles with role requirements using automated scoring.
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col3:
+        st.markdown(
+            """
+            <div class="feature-card">
+                <div class="feature-icon">▦</div>
+                <div class="feature-title">Recruiter Dashboard</div>
+                <div class="feature-text">
+                    Review rankings, candidate insights, reports, and recruitment metrics.
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    _, button_col, _ = st.columns([1, 2, 1])
+
+    with button_col:
+        if st.button("Enter Demo Workspace →", use_container_width=True):
+            st.session_state.entered_workspace = True
+            st.rerun()
+
+    st.markdown(
+        """
+        <div class="welcome-note">
+            Human-in-the-loop recruitment system · For demonstration purposes
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def main() -> None:
     inject_css()
+        if "entered_workspace" not in st.session_state:
+        st.session_state.entered_workspace = False
+
+    if not st.session_state.entered_workspace:
+        welcome_page()
+        return
+        
     st.sidebar.title("MT Talent Intelligence")
     st.sidebar.caption("CV extraction · semantic scoring · recruiter dashboard")
     page = st.sidebar.radio("Navigate", ["Company Dashboard", "Candidate Portal", "Create Job"], index=0)
